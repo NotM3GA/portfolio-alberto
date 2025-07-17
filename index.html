@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio di Alberto Zanatta</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      background: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
+    }
+    nav a:hover {
+      background-color: #00bcd4;
+      color: #121212;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #00bcd4;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
+      background: url('hero.png') center/cover no-repeat;
+      text-align: center;
+      filter: brightness(0.7) contrast(1.1) saturate(1.2);
+      box-shadow: inset 0 0 80px 30px rgba(0,0,0,0.8);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+      z-index: 0;
+    }
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+      color: #e0f7fa;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      opacity: 0;
+      transform: translateY(30px);
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+    }
+    .hero h2 {
+      animation-name: slideFadeInUp;
+      animation-delay: 0.3s;
+      font-size: 3.5rem;
+    }
+    .hero p {
+      animation-name: slideFadeInUp;
+      animation-delay: 0.8s;
+      font-size: 1.5rem;
+      max-width: 600px;
+    }
+    @keyframes slideFadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      max-width: 900px;
+      margin: 60px auto 40px;
+      padding: 20px 30px;
+      background: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h3 {
+      border-bottom: 2px solid #444;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+    .project-title {
+      font-weight: bold;
+      color: #00bcd4;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #0097a7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
+
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    input, textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    input:focus, textarea:focus {
+      outline: 2px solid #00bcd4;
+      background-color: #2a2a2a;
+      color: #e0f7fa;
+    }
+    button {
+      background-color: #00bcd4;
+      color: #121212;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0097a7;
+    }
+
+    .cv-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background: #00bcd4;
+      color: #121212;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .cv-button:hover {
+      background-color: #0097a7;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Portfolio</h1>
+  <nav>
+    <a href="#chi-sono">Chi sono</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contatti">Contatti</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Benvenuto</h2>
+  <p>Scopri i miei progetti e come possiamo lavorare insieme</p>
+</section>
+
+<section id="chi-sono">
+  <h3>Chi sono</h3>
+  <p id="chi-sono-testo"></p>
+  <a href="CV_Alberto_Zanatta.pdf" class="cv-button" download>Scarica il mio CV</a>
+</section>
+
+<section id="portfolio">
+  <h3>Portfolio</h3>
+
+  <div class="project">
+    <p class="project-title">🥗 Dietly</p>
+    <p>App web open-source per la gestione personalizzata della dieta e delle abitudini alimentari. 
+      Progetto collaborativo sviluppato in team.</p>
+    <a href="https://github.com/ro-mo/dietly" target="_blank">Vai al repository GitHub →</a>
+  </div>
+
+  <div class="project">
+    <p class="project-title">🧠 StudyFlow</p>
+    <p>Applicazione web per la gestione dello studio e dei task giornalieri, pensata per studenti. 
+      Design intuitivo e tecnologie moderne.</p>
+    <a href="https://github.com/tononjacopo/StudyFlow" target="_blank">Vai al repository GitHub →</a>
+  </div>
+</section>
+
+<section id="contatti">
+  <h3>Contatti</h3>
+  <p>Hai un progetto in mente? Vuoi collaborare? Contattami pure!</p>
+  <p>
+    📧 Email: <a href="mailto:giavera.zans@email.com">giavera.zans@email.com</a><br>
+    📱 Telefono: <a href="tel:+393333388474">+39 3333388474</a><br>
+    💼 LinkedIn: <a href="https://www.linkedin.com/in/tuo-profilo" target="_blank">linkedin.com/in/tuo-profilo</a><br>
+    🐙 GitHub: <a href="https://github.com/tuo-github" target="_blank">github.com/tuo-github</a><br>
+    🎨 Instagram: <a href="https://www.instagram.com/alberto_zanatta_/" target="_blank">@alberto_zanatta_</a>
+  </p>
+</section>
+
+<footer>
+  &copy; 2025 Portfolio di Alberto Zanatta - Tutti i diritti riservati
+</footer>
+
+<script>
+  function calcolaEta(dataNascita) {
+    const oggi = new Date();
+    const nascita = new Date(dataNascita);
+    let eta = oggi.getFullYear() - nascita.getFullYear();
+    if (
+      oggi.getMonth() < nascita.getMonth() ||
+      (oggi.getMonth() === nascita.getMonth() && oggi.getDate() < nascita.getDate())
+    ) {
+      eta--;
+    }
+    return eta;
+  }
+
+  const eta = calcolaEta('2006-07-05');
+  const testo = `Ciao! Sono Alberto Zanatta, ho ${eta} anni e ho frequentato l’indirizzo informatico al Max Planck di Villorba.
+Mi appassionano la programmazione, il web design e tutto ciò che riguarda il mondo tech. 
+Sto studiando per ottenere la patente e sono alla ricerca di opportunità per crescere come sviluppatore.`;
+
+  document.getElementById('chi-sono-testo').textContent = testo;
+
+  function revealSections() {
+    const sections = document.querySelectorAll('section');
+    const windowHeight = window.innerHeight;
+    sections.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      if (top < windowHeight * 0.85) {
+        section.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealSections);
+  window.addEventListener('load', revealSections);
+</script>
+
+</body>
+</html>
