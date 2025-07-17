@@ -9,7 +9,7 @@
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
       background-color: #121212;
-      color: #f0f0f0;
+      color: #e0e0e0;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -24,6 +24,7 @@
     header h1 {
       margin: 0;
       font-size: 2rem;
+      color: #cccccc;
     }
     nav {
       margin-top: 10px;
@@ -32,7 +33,7 @@
       gap: 20px;
     }
     nav a {
-      color: #f0f0f0;
+      color: #bbbbbb;
       text-decoration: none;
       padding: 8px 12px;
       border-radius: 6px;
@@ -40,8 +41,8 @@
       position: relative;
     }
     nav a:hover {
-      background-color: #00bcd4;
-      color: #121212;
+      background-color: #444444;
+      color: #dddddd;
     }
     nav a::after {
       content: "";
@@ -50,7 +51,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #00bcd4;
+      background-color: #bbbbbb;
       transition: width 0.3s ease;
       border-radius: 2px;
     }
@@ -67,7 +68,7 @@
       height: 60vh;
       background: url('hero.png') center/cover no-repeat;
       text-align: center;
-      filter: brightness(0.7) contrast(1.1) saturate(1.2);
+      filter: brightness(0.7) contrast(1.1) saturate(0);
       box-shadow: inset 0 0 80px 30px rgba(0,0,0,0.8);
     }
     .hero::before {
@@ -80,7 +81,7 @@
     .hero h2, .hero p {
       position: relative;
       z-index: 1;
-      color: #e0f7fa;
+      color: #dddddd;
       text-shadow: 0 4px 10px rgba(0,0,0,0.7);
       opacity: 0;
       transform: translateY(30px);
@@ -109,7 +110,7 @@
       max-width: 900px;
       margin: 60px auto 40px;
       padding: 20px 30px;
-      background: #1e1e1e;
+      background: #2a2a2a;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
       opacity: 0;
@@ -121,10 +122,11 @@
       transform: translateY(0);
     }
     h3 {
-      border-bottom: 2px solid #444;
+      border-bottom: 2px solid #444444;
       padding-bottom: 8px;
       margin-bottom: 20px;
       font-weight: 600;
+      color: #cccccc;
     }
 
     .project {
@@ -132,23 +134,23 @@
     }
     .project-title {
       font-weight: bold;
-      color: #00bcd4;
+      color: #bbbbbb;
     }
 
     a {
-      color: #00bcd4;
+      color: #bbbbbb;
       text-decoration: none;
     }
     a:hover {
-      color: #0097a7;
+      color: #dddddd;
     }
 
     footer {
       text-align: center;
       padding: 20px;
       font-size: 0.9rem;
-      color: #aaa;
-      border-top: 1px solid #333;
+      color: #888888;
+      border-top: 1px solid #333333;
     }
 
     form {
@@ -162,14 +164,16 @@
       border-radius: 8px;
       border: none;
       font-size: 1rem;
+      background-color: #1e1e1e;
+      color: #e0e0e0;
     }
     input:focus, textarea:focus {
-      outline: 2px solid #00bcd4;
+      outline: 2px solid #bbbbbb;
       background-color: #2a2a2a;
-      color: #e0f7fa;
+      color: #dddddd;
     }
     button {
-      background-color: #00bcd4;
+      background-color: #bbbbbb;
       color: #121212;
       border: none;
       padding: 12px;
@@ -180,14 +184,14 @@
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #0097a7;
+      background-color: #dddddd;
     }
 
     .cv-button {
       display: inline-block;
       margin-top: 15px;
       padding: 10px 18px;
-      background: #00bcd4;
+      background: #bbbbbb;
       color: #121212;
       font-weight: bold;
       border-radius: 8px;
@@ -195,7 +199,7 @@
       transition: background-color 0.3s ease;
     }
     .cv-button:hover {
-      background-color: #0097a7;
+      background-color: #dddddd;
     }
   </style>
 </head>
